@@ -147,6 +147,109 @@ def breadth_first_search(graph, start_node)
     end
 end
 
+# Bubble sort function
+def bubble_sort(array)
+        # Start the timer
+    start_time = Time.now
+
+    # Loop through the array, comparing adjacent elements
+    array.length.times do
+        swapped = false
+
+        # Compare adjacent elements and swap if necessary
+        (0...array.length - 1).each do |i|
+            if array[i] > array[i + 1]
+                array[i], array[i + 1] = array[i + 1], array[i]
+                swapped = true
+            end
+        end
+
+        # If no swaps were made, the array is sorted
+        break unless swapped
+    end
+
+    # Measure the time it took for the sort
+    end_time = Time.now
+    # Calculate the time it took for the sort
+    time_taken = end_time.to_f - start_time.to_f
+
+    puts "\n- Bubble sort"
+    puts "Sorted array: #{array}"
+    puts "Time taken: #{(time_taken*100000000).round} ms"
+end
+
+# Selection sort function
+def selection_sort(array)
+    # Start the timer
+    start_time = Time.now
+
+    # Loop through the array, finding the minimum element
+    array.length.times do |i|
+        min_index = i
+
+        # Find the index of the minimum element
+        (i + 1...array.length).each do |j|
+            if array[j] < array[min_index]
+                min_index = j
+            end
+        end
+
+        # Swap the minimum element with the current element
+        array[i], array[min_index] = array[min_index], array[i]
+    end
+
+    # Measure the time it took for the sort
+    end_time = Time.now
+    # Calculate the time it took for the sort
+    time_taken = end_time.to_f - start_time.to_f
+
+    puts "\n- Selection sort"
+    puts "Sorted array: #{array}"
+    puts "Time taken: #{(time_taken*100000000).round} ms"
+end
+
+# Insertion sort function
+def insertion_sort(array)
+    # Start the timer
+    start_time = Time.now
+
+    # Loop through the array, starting from the second element
+    (1...array.length).each do |i|
+        # Get the current element
+        current = array[i]
+
+        # Find the correct position for the current element
+        j = i - 1
+        while j >= 0 && array[j] > current
+            array[j + 1] = array[j]
+            j -= 1
+        end
+
+        # Insert the current element at the correct position
+        array[j + 1] = current
+    end
+
+    # Measure the time it took for the sort
+    end_time = Time.now
+    # Calculate the time it took for the sort
+    time_taken = end_time.to_f - start_time.to_f
+
+    puts "\n- Insertion sort"
+    puts "Sorted array: #{array}"
+    puts "Time taken: #{(time_taken*100000000).round} ms"
+end
+
+# Merge sort function
+
+# Quick sort function
+
+
+# Heap sort function
+
+
+# Radix sort function
+
+
 binary_search([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], 18)
 linear_search([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], 15)
 depth_first_search({ 'A' => ['B', 'C'], 'B' => ['A', 'D', 'E'], 'C' => ['A', 'F'], 'D' => ['B'], 'E' => ['B'], 'F' => ['C'] }, 'A')

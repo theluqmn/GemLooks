@@ -15,7 +15,6 @@ A Ruby-based sorting/searching library.
 
 - [ ] Bubble sort
 - [ ] Selection sort
-- [ ] Insertion sort
 - [ ] Merge sort
 - [ ] Quick sort
 - [ ] Heap sort
